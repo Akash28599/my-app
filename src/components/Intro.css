@@ -1,0 +1,84 @@
+.Intro {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 50px; /* space from Nav if fixed */
+  color: white;
+}
+
+.Intro .highlight-box {
+  height: 20px;
+  width: 200px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px;
+  font-size: 12px;
+  border: 1px solid gray;
+  position: relative;
+  overflow: hidden; /* clip moving slash */
+  margin-bottom: 50px;
+}
+
+.Intro .highlight-box .slash {
+  position: absolute;
+  top: 0;
+  left: -5%; /* start slightly off-screen */
+  width: 1%;
+  height: 100%;
+  background: white;
+  transform: skewX(15deg);
+  animation: slashAnim 1s linear infinite;
+}
+
+@keyframes slashAnim {
+  0% { left: -10%; }
+  100% { left: 110%; }
+}
+
+.Intro h1 {
+  font-size: 50px;
+  width: 50%;
+  text-align: center;
+  line-height: 1.2;
+  margin: 0 0 10px 0;
+  word-wrap: break-word;
+}
+
+.Intro p {
+  font-size: 20px;
+  width: 40%;
+  text-align: center;
+  line-height: 1.4;
+  word-break: break-word;
+  margin: 0;
+}
+
+.Intro .buttons {
+  display: flex;
+  column-gap: 60px;
+  margin-top: 30px;
+}
+
+.Intro .buttons button {
+  width: 140px;
+  border-radius: 10px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid gray;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* spacing between icon and text */
+}
+
+/* Responsive styling */
+@media (max-width: 480px) {
+  .Intro .highlight-box { width: 150px; height: 38px; border-radius: 10px;}
+  .Intro .slash { width: 2%; }
+  .Intro h1 { font-size: 24px; width: 80%; }
+  .Intro p { font-size: 16px; width: 80%; }
+  .Intro .buttons { flex-direction: column; row-gap: 15px; column-gap: 0; }
+}
