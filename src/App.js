@@ -53,7 +53,9 @@ function App() {
       </button>
 
       {snapshotUrl && (
-        <img src={snapshotUrl} alt="snapshot" style={{ width: "300px", height: "200px", border: "2px solid black", objectFit:"contain"}} />
+        <a href={snapshotUrl} download="snapshot.png">
+          <img src={snapshotUrl} alt="snapshot" style={{ width: "300px", height: "200px", border: "2px solid black", objectFit:"contain"}}  />
+        </a>
       )}
     </div>
   );
